@@ -1,11 +1,11 @@
 // Angular features
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // Components
-import { SearchComponent } from './components/search/search.component';
 import { ListComponent } from './components/list/list.component';
+import { SearchComponent } from './components/search/search.component';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +16,5 @@ import { ListComponent } from './components/list/list.component';
 })
 
 export class AppComponent {
-  title = 'Angular with Rick and Morty';
+  title: string = 'angular-rick-and-morty'
 }

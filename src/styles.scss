@@ -1,5 +1,17 @@
+// Variables
+:root {
+  --bg-soft: rgb(63 63 70);
+  --bg-gray: rgb(39 39 42);
+  --bg-dark: rgb(24 24 27);
+  --bg-black: rgb(9 9 11);
+  --bg-light: white;
+
+  --limit-size: 800px;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  list-style: none;
 }

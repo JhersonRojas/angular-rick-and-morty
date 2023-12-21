@@ -1,26 +1,25 @@
 <main>
-  <article class="container">
-    <header class="header">
-      <figure class="rick-icon">
-        <img src="../assets/rick.svg" alt="Rick logo" />
-      </figure>
-      <h3 class="rick-title">
-        Angular with Rick and Morty
-      </h3>
-    </header>
-    <section class="section-search">
+  <header class="header">
+    <figure class="rick-icon">
+      <img src="../assets/rick.svg" alt="Rick logo" />
+    </figure>
+    <h3 class="rick-title">
+      Angular with Rick and Morty
+    </h3>
+    <section class="character-search">
       <app-search />
     </section>
+  </header>
+  <article class="container custombar">
     <section class="section-content">
-      Content
       <app-list />
     </section>
-
-    <footer class="footer">
-      Footer
-    </footer>
-
   </article>
+  <footer class="footer">
+    <small>
+      Copyright © JhersonRojas 2023
+    </small>
+  </footer>
 </main>
 
 <router-outlet></router-outlet>

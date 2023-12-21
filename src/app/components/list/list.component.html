@@ -1,1 +1,7 @@
-<p>list works!</p>
+<ul class="custombar">
+  @for (item of characters; track item.name) {
+  <li> {{ item.name }} </li>
+  } @empty {
+  <li> There are no items. </li>
+  }
+</ul>
