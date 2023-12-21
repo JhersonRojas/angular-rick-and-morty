@@ -29,4 +29,7 @@ export class ListComponent implements OnInit {
     initResquest()
   }
 
+  getCharacter(character: Result) {
+    console.log(character)
+  }
 }

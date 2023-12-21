@@ -1,5 +1,10 @@
-<form role="search">
-  <input type="text" placeholder="Search some character...">
+<form [formGroup]="queryForm" (ngSubmit)="searchQuery()">
+  <input type="text" placeholder="Search some character..." formControlName="query">
+  @if (queryForm.value.query) {
+  <button type="button" (click)="resetQuery()">
+    X
+  </button>
+  }
   <button type="submit">
     Search
   </button>

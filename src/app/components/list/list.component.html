@@ -1,7 +1,29 @@
-<ul class="custombar">
-  @for (item of characters; track item.name) {
-  <li> {{ item.name }} </li>
+<article class="characters">
+  @for (item of characters; track item.id) {
+  <section class="character-item" (click)="getCharacter(item)">
+    <figure>
+      <img src={{item.image}} alt={{item.name}} class="character-img">
+    </figure>
+    <article class="character-data">
+      <span>
+        <h3>
+          {{item.name}}
+        </h3>
+        <p>
+          {{item.gender}}
+        </p>
+      </span>
+      <span>
+        <h3>
+          {{item.species}}
+        </h3>
+        <p>
+          {{item.status}}
+        </p>
+      </span>
+    </article>
+  </section>
   } @empty {
-  <li> There are no items. </li>
+  <section class="not-characters"> There are no characters. </section>
   }
-</ul>
+</article>
