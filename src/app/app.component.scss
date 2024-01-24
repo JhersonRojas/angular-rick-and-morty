@@ -7,9 +7,10 @@ main {
   flex-direction: column;
   justify-content: space-between;
 
-  .header {
+  .main-header {
     color: white;
-    text-align: center;
+    display: flex;
+    gap: 2rem;
     margin: 2rem auto 2rem auto;
 
     .rick-icon {
@@ -21,27 +22,44 @@ main {
       border-radius: 50%;
 
       img {
-        width: 100px;
+        width: 5rem;
       }
     }
 
-    .rick-title {
+    .character-search .rick-title {
       font-weight: 500;
       font-size: 1.8rem;
       margin: 1rem auto 1rem auto;
     }
+
+    @media screen and (max-width: 768px) {
+      margin: 2rem;
+
+      .rick-icon img {
+        width: 4rem;
+      }
+
+      .character-search .rick-title {
+        text-align: center;
+        font-size: 1.25rem;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      br {
+        display: none;
+      }
+    }
   }
 
-  .container {
+  .main-container {
     max-width: var(--limit-size);
     width: 100%;
     margin: 0 auto 0 auto;
     overflow-y: auto;
-
-    .section-content {}
   }
 
-  .footer {
+  .main-footer {
     background: var(--bg-dark);
     color: white;
     max-width: var(--limit-size);
@@ -52,7 +70,7 @@ main {
     align-items: center;
 
     small {
-      padding: 1.5rem 0 1.5rem 0.5rem;
+      padding: 1.3rem 0 1.3rem 0.5rem;
       margin-left: 1.5rem;
     }
   }
