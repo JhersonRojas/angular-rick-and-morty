@@ -1,12 +1,12 @@
 {
   "name": "angular-rick-and-morty",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "export CHROME_BIN=/usr/bin/brave-browser && ng test"
   },
   "private": true,
   "dependencies": {

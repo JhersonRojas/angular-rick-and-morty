@@ -1,21 +1,26 @@
-<article class="characters">
-  @for (item of characters; track item.id) {
-  <section class="character-item" (click)="getCharacter(item)">
-    <figure>
-      <img src={{item.image}} alt={{item.name}} class="character-img">
-    </figure>
-    <article class="character-data">
-      <span class="primary">
-        <h3>{{item.name}}</h3>
-        <p>{{item.gender}}</p>
-      </span>
-      <span class="secondary">
-        <h3>{{item.species}}</h3>
-        <p>{{item.status}}</p>
-      </span>
-    </article>
-  </section>
-  } @empty {
-  <section class="not-characters"> There are no characters. </section>
+<main>
+  @if (!loadCharecters) {
+  <span class="loader"></span>
   }
-</article>
+  @else {
+  <ul class="characters">
+    @for (character of characters; track character.id) {
+    <li class="character-item" (click)="getCharacter(character)">
+      <figure>
+        <img src={{character.image}} alt={{character.name}} class="character-img">
+      </figure>
+      <article class="character-data">
+        <span class="primary">
+          <h3>{{character.name}}</h3>
+          <p>{{character.gender}}</p>
+        </span>
+        <span class="secondary">
+          <h3>{{character.species}}</h3>
+          <p>{{character.status}}</p>
+        </span>
+      </article>
+    </li>
+    }
+  </ul>
+  }
+</main>

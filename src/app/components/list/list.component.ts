@@ -12,24 +12,36 @@ import { RequestService } from '../../services/request.service';
   standalone: true,
   imports: [],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+  styleUrl: './list.component.scss',
+  host: { 'class': 'app-list' }
 })
 
 export class ListComponent implements OnInit {
 
   public characters: Result[] = []
+  public loadCharecters: boolean = false
 
-  constructor(private reqservice: RequestService) { }
+  constructor(private service: RequestService) { }
 
   ngOnInit(): void {
-    const initResquest = async () => {
-      const response = await this.reqservice.getInformation()
-      if (response) this.characters = [...response.results, ...response.results]
-    }
-    initResquest()
+    this.getCharacters()
   }
 
-  getCharacter(character: Result) {
+  private getCharacters() {
+    this.service.getInformation().subscribe({
+      next: (value) => {
+        if (value.results) {
+          this.loadCharecters = true
+          this.characters = value.results
+        }
+      },
+      error: (err) => {
+
+      }
+    })
+  }
+
+  public getCharacter(character: Result) {
     console.log(character)
   }
 }

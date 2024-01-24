@@ -1,8 +1,14 @@
+/**
+ * Respuesta principal de la petición a la Api Rick y Morty 
+ */
 export interface Request_RickAndMorty {
     info: Info;
     results: Result[];
 }
 
+/**
+ * Información general de los resultados
+ */
 export interface Info {
     count: number;
     pages: number;
@@ -10,6 +16,9 @@ export interface Info {
     prev: null;
 }
 
+/**
+ *  Resultado como información de un personaje con sus detalles
+ */
 export interface Result {
     id: number;
     name: string;
@@ -25,22 +34,34 @@ export interface Result {
     created: Date;
 }
 
+/**
+ * Tipos para el genero algún personaje
+ */
 export enum Gender {
     Female = "Female",
     Male = "Male",
     Unknown = "unknown",
 }
 
+/**
+ * Tipos para la localización de algún personaje
+ */
 export interface Location {
     name: string;
     url: string;
 }
 
+/**
+ * Tipos para las posibles especies que tiene un personaje
+ */
 export enum Species {
     Alien = "Alien",
     Human = "Human",
 }
 
+/**
+ * Tipos para el posible estado del personaje
+ */
 export enum Status {
     Alive = "Alive",
     Dead = "Dead",
