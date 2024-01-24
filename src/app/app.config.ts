@@ -1,4 +1,4 @@
-// Angular features
+// Ng features
 import { ApplicationConfig } from '@angular/core';
 
 // Providers

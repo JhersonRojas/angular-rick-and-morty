@@ -8,9 +8,9 @@
   }
 
   @if (response.load) {
-  <ul class="characters">
+  <article class="characters">
     @for (character of response.characters; track character.id) {
-    <li class="character-item" (click)="getCharacter(character)">
+    <a href="/character?id={{character.id}}" class="character-item">
       <figure>
         <img src={{character.image}} alt={{character.name}} class="character-img">
       </figure>
@@ -24,8 +24,8 @@
           <p>{{character.status}}</p>
         </span>
       </article>
-    </li>
+    </a>
     }
-  </ul>
+  </article>
   }
 </main>

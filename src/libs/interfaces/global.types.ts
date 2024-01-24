@@ -3,6 +3,7 @@
  */
 export interface ResponseTypes {
     characters?: Character[];
+    character?: Character;
     error?: string | null;
     load: boolean
 };

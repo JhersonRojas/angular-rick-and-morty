@@ -1,0 +1,58 @@
+<main class="character-main">
+
+  <nav class="character-nav">
+    <figure class="rick-icon">
+      <img src="/assets/favicon.svg" alt="">
+    </figure>
+    <a href="/">Inicio</a>
+  </nav>
+
+  @if (response.character) {
+  <article class="character-content">
+    <figure>
+      <h1> {{response.character.name}} </h1>
+      <img src="{{response.character.image}}" alt="{{response.character.name}}" />
+    </figure>
+    <section>
+      <h2>
+        Información general
+      </h2>
+      <p>
+        <b>Identificación:</b>
+        {{response.character.id}}
+      </p>
+      <p>
+        <b>Especie:</b>
+        {{response.character.species}}
+      </p>
+      <p>
+        <b>Género:</b>
+        @if (response.character.gender === "Male") {
+        Masculino
+        }
+        @if (response.character.gender === "Female") {
+        Femenino
+        }
+      </p>
+      <p>
+        <b>Origen:</b>
+        {{response.character.origin.name}}
+      </p>
+      <p>
+        <b>Estado:</b>
+        {{response.character.status}}
+      </p>
+      <p>
+        <b>Ubicación:</b>
+        {{response.character.location.name}}
+      </p>
+    </section>
+  </article>
+  }
+  @else {
+  <div>
+    Información no obtenida
+  </div>
+  }
+
+</main>

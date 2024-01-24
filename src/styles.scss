@@ -6,6 +6,9 @@
   --bg-black: rgb(9 9 11);
   --bg-light: white;
 
+  --text-black: rgb(9 9 11);
+  --text-light: white;
+
   --limit-size: 800px;
 }
 
@@ -14,6 +17,7 @@
   padding: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   list-style: none;
+  text-decoration: none;
 }
 
 .loader {
@@ -35,4 +39,21 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.custombar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-dark) var(--bg-light);
+}
+
+.custombar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custombar::-webkit-scrollbar-track {
+  background-color: var(--bg-light);
+}
+
+.custombar::-webkit-scrollbar-thumb {
+  background-color: var(--bg-dark);
 }

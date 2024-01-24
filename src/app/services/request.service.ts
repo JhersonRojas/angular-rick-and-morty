@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 // Interfaces
-import { Request_RickAndMorty } from '../../libs/interfaces/global.types';
+import { Character, Request_RickAndMorty } from '../../libs/interfaces/global.types';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,10 @@ export class RequestService {
    */
   public getResults(query?: string): Observable<Request_RickAndMorty> {
     return this.http.get<Request_RickAndMorty>(this.baseurl + (query ? `/api/character/?name=${query}` : '/api/character'))
+  }
+
+  public getOneResult(param: string): Observable<Character> {
+    return this.http.get<Character>(this.baseurl + `/api/character/${param}`)
   }
 
 }
