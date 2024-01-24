@@ -1,10 +1,15 @@
 <main>
-  @if (!loadCharecters) {
+  @if (!response.load && !response.error) {
   <span class="loader"></span>
   }
-  @else {
+
+  @if (response.error) {
+  <div> {{response.error}} </div>
+  }
+
+  @if (response.load) {
   <ul class="characters">
-    @for (character of characters; track character.id) {
+    @for (character of response.characters; track character.id) {
     <li class="character-item" (click)="getCharacter(character)">
       <figure>
         <img src={{character.image}} alt={{character.name}} class="character-img">

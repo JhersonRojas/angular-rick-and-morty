@@ -19,8 +19,8 @@ export class RequestService {
   /**
    * @description Petición get para obtener los personajes primarios del API rest
    */
-  public getInformation(): Observable<Request_RickAndMorty> {
-    return this.http.get<Request_RickAndMorty>(this.baseurl + '/api/character')
+  public getResults(query?: string): Observable<Request_RickAndMorty> {
+    return this.http.get<Request_RickAndMorty>(this.baseurl + (query ? `/api/character/?name=${query}` : '/api/character'))
   }
 
 }

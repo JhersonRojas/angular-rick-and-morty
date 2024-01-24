@@ -1,9 +1,18 @@
 /**
+ * Tipos para posible estructura de la respuesta
+ */
+export interface ResponseTypes {
+    characters?: Character[];
+    error?: string | null;
+    load: boolean
+};
+
+/**
  * Respuesta principal de la petición a la Api Rick y Morty 
  */
 export interface Request_RickAndMorty {
     info: Info;
-    results: Result[];
+    results: Character[];
 }
 
 /**
@@ -19,7 +28,7 @@ export interface Info {
 /**
  *  Resultado como información de un personaje con sus detalles
  */
-export interface Result {
+export interface Character {
     id: number;
     name: string;
     status: Status;
