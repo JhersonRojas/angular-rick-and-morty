@@ -45,7 +45,7 @@ export class CharacterComponent implements OnInit {
      */
     private getCharacter(): void {
         if (this.queryParam) {
-            this.service.getOneResult(this.queryParam).subscribe({
+            this.service.getOneCharacter(this.queryParam).subscribe({
                 next: (value) => this.response.character = value,
                 error: (err) => this.response.error = "Error al solicitar al personaje",
                 complete: () => this.response.load = true

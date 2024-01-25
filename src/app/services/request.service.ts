@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-// Interfaces
+// Interfaces / Constantes
+import { CONST_URL_API } from '../../libs/constants/global.values';
 import { Character, Request_RickAndMorty } from '../../libs/interfaces/global.types';
 
 @Injectable({
@@ -12,18 +13,18 @@ import { Character, Request_RickAndMorty } from '../../libs/interfaces/global.ty
 
 export class RequestService {
 
-  private baseurl: string = 'https://rickandmortyapi.com'
+  private baseurl: string = CONST_URL_API
 
   constructor(private http: HttpClient) { }
 
   /**
    * @description Petición get para obtener los personajes primarios del API rest
    */
-  public getResults(query?: string): Observable<Request_RickAndMorty> {
+  public getCharacters(query?: string): Observable<Request_RickAndMorty> {
     return this.http.get<Request_RickAndMorty>(this.baseurl + (query ? `/api/character/?name=${query}` : '/api/character'))
   }
 
-  public getOneResult(param: string): Observable<Character> {
+  public getOneCharacter(param: string): Observable<Character> {
     return this.http.get<Character>(this.baseurl + `/api/character/${param}`)
   }
 

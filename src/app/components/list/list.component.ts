@@ -56,7 +56,7 @@ export class ListComponent implements OnInit {
      * Metodo para obtener los personajes desde un API rest
      */
     private getCharacters(): void {
-        this.service.getResults(this.queryParam).subscribe({
+        this.service.getCharacters(this.queryParam).subscribe({
             next: (value) => this.response.characters = value.results,
             error: (err) => this.response.error = "Error al solicitar los personajes",
             complete: () => this.response.load = true

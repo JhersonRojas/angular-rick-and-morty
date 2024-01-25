@@ -47,11 +47,18 @@ export interface Character {
 /**
  * Tipos para el genero algún personaje
  */
-export enum Gender {
-    Female = "Female",
-    Male = "Male",
-    Unknown = "unknown",
-}
+export type Gender = "Female" | "Male" | "unknown"
+
+/**
+ * Tipos para las posibles especies que tiene un personaje
+ */
+export type Species = "Alien" | "Human"
+
+
+/**
+ * Tipos para el posible estado del personaje
+ */
+export type Status = "Alive" | "Dead" | "unknown"
 
 /**
  * Tipos para la localización de algún personaje
@@ -59,21 +66,4 @@ export enum Gender {
 export interface Location {
     name: string;
     url: string;
-}
-
-/**
- * Tipos para las posibles especies que tiene un personaje
- */
-export enum Species {
-    Alien = "Alien",
-    Human = "Human",
-}
-
-/**
- * Tipos para el posible estado del personaje
- */
-export enum Status {
-    Alive = "Alive",
-    Dead = "Dead",
-    Unknown = "unknown",
 }
